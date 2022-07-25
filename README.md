@@ -6,7 +6,7 @@ home page contains 3 components
 
 1. **SearchBox**
 2. **Filter** works well except location and category which are by default set to all and the default sort option is *alphabetical*.
-3. **offers** which is composed of *offer* components
+3. **Offers** which is composed of *offer* components
 
 ### Offer Component
 
@@ -20,9 +20,10 @@ The route also contains the id of offer which has no use for now, about it can b
 
 ## CreateOffer Route
 
-It renders the form to create new offer and then stores it to firebase and updates the home page offers also .
+It renders the form to create new offer and then stores it to firebase and updates the home page offers also.
+When the offerCreation form is submitted it sends a *put* request to firebase. And when the page loads for the first time it makes a *get* request to firebase but not any *put* request on the first time because it will overwrite the existing data.
 
-I have hard coded some offers in the *offers-slice.js* file  so that even if there is an error in fetching the database from firebase it will still show those offers.
+But I have hard coded some offers in the *offers-slice.js* file as a fallback because sometimes the *put* request was being made even in the first render(overwriting the existing data) before the *get* request.
 
 
 ## Some features of this app
@@ -31,7 +32,7 @@ I have hard coded some offers in the *offers-slice.js* file  so that even if the
 2. All the pages are responsive.
 3. Lazy Loading so that all the code is not loaded in one time, but only when it is needed.
 4. Forms can't be submitted until all the fields are valid.
-5. Apply for an offer from apply now link of an offer.
+5. Apply for an offer from *apply now* link of an offer.
 6. Filter the offers according to different parameters (except location and category)
 
 To Start the app :
