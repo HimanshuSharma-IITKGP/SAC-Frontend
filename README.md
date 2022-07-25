@@ -1,0 +1,40 @@
+# Job Offers Application
+
+## Home Page Route
+
+home page contains 3 components
+
+1. **SearchBox**
+2. **Filter** works well except location and category which are by default set to all and the default sort option is *alphabetical*.
+3. **offers** which is composed of *offer* components
+
+### Offer Component
+
+contains the information about a particular offer which is passed as prop and it has a sub component called *Detail* which is used 4 times in one offer component.
+
+## Application Route
+
+application route renders the form to apply for a given form and then submit it using an API created using express and  stores it in mongodb.
+
+The route also contains the id of offer which has no use for now, about it can be used to get the person who created that offer and then send him/her an email that someone has shown interest to his/her offer.
+
+## CreateOffer Route
+
+It renders the form to create new offer and then stores it to firebase and updates the home page offers also .
+
+I have hard coded some offers in the *offers-slice.js* file  so that even if there is an error in fetching the database from firebase it will still show those offers.
+
+
+## Some features of this app
+
+1. Anyone is able to create more offers in createOffer route.
+2. All the pages are responsive.
+3. Lazy Loading so that all the code is not loaded in one time, but only when it is needed.
+4. Forms can't be submitted until all the fields are valid.
+5. Apply for an offer from apply now link of an offer.
+6. Filter the offers according to different parameters (except location and category)
+
+To Start the app :
+
+1. run `npm start` in the root of fronted folder.
+2. And then run `npm run dev` in the root of backend folder.
