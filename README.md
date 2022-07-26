@@ -30,10 +30,9 @@ But I have hard coded some offers in the *offers-slice.js* file as a fallback be
 
 1. Anyone is able to create more offers in createOffer route.
 2. All the pages are responsive.
-3. Lazy Loading so that all the code is not loaded in one time, but only when it is needed.
-4. Forms can't be submitted until all the fields are valid.
-5. Apply for an offer from *apply now* link of an offer.
-6. Filter the offers according to different parameters (except location and category)
+3. Forms can't be submitted until all the fields are valid.
+4. Apply for an offer from *apply now* link of an offer.
+5. Filter the offers according to different parameters (except location and category)
 
 To Start the app :
 
