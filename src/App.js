@@ -106,13 +106,23 @@ const App = () => {
     });
   }
 
+  // console.log(modifiedOffersList);
+
   if (submittedForm.sortBy === "alphabetical") {
+    // console.log('alphabetical')
     const copy = [...modifiedOffersList];
     copy.sort((a, b) => {
-      return a.title >= b.title ? 1 : -1;
+      if (a.title.toLowerCase() > b.title.toLowerCase()) {
+        return 1;
+      } else if (a.title.toLowerCase() < b.title.toLowerCase()) {
+        return -1;
+      }
+      return 0;
     });
     modifiedOffersList = copy;
-  } else if (submittedForm.sortBy === "lastDate") {
+  } 
+  
+  else if (submittedForm.sortBy === "lastDate") {
     const copy = [...modifiedOffersList];
     copy.sort((a, b) => {
       return new Date(b.lastDate).getTime() - new Date(a.lastDate).getTime();
@@ -120,6 +130,7 @@ const App = () => {
     modifiedOffersList = copy;
   }
 
+  // console.log(modifiedOffersList)
 
 
   const list = modifiedOffersList.map((offer) => {
